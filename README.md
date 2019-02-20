@@ -1,0 +1,2 @@
+# BIT_Second_Round_Exam
+北京理工大学复试历年上机代码
