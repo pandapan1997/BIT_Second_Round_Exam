@@ -37,7 +37,7 @@ vector<int> R;
 int main(){
     string str;
     cin>>str;
-    str.erase(str.begin());
+    str.erase(str.begin());//去掉头和尾的括号,在这里没有用。
     str.erase(str.begin()+str.length()-1);
     //creat map
     stack<int> s;
