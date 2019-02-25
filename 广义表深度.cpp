@@ -16,6 +16,7 @@ using namespace std;
 int main(){
     string str;
     stack<int> s;
+    cout<<"输入广义表"<<endl;
     cin>>str;
     int max_deep=0;
     for(int i =0;i<str.length();++i){
@@ -26,5 +27,4 @@ int main(){
         else if(str[i]==')')s.pop();
     }
     return max_deep;
-    return 0;
 }
