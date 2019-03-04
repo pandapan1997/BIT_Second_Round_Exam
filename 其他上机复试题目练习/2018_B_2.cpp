@@ -16,23 +16,21 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <map>
 using namespace std;
 int main(){
-    map<char,int> m;
-    string s;
-    cin>>s;
-    for(auto i:s){
-        m[i]++;
-    }
-    int cnt = 0;
-    cin>>s;
-    for(auto i:s){
-        if(m[i]){
-            cnt++;
-            m[i]--;
+    string a,b;
+    cin>>a>>b;
+    vector<int> dp(a.length(),0);
+    for(int i =0;i<a.length();++i){
+        for(int j =a.length()-1;j>i;--j){
+            string substr =a.substr(i,j);
+            if(b.find(substr)!=-1){
+                dp[i] = j;
+                break;
+            }
         }
     }
-    cout<<cnt<<endl;
+    int max = *max_element(dp.begin(),dp.end());
+    cout<<max;
     return 0;
 }

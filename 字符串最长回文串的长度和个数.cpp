@@ -12,6 +12,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <algorithm>
 using namespace std;
 bool judge(string &s,int l ,int h){
     while(l<=h){//判断回文串
@@ -22,10 +23,7 @@ bool judge(string &s,int l ,int h){
 int main(){
     string str;
     cin>>str;
-    for(int i =0;i<str.length();i++){//全部变成小写
-        if(str[i]>='A'&&str[i]<='Z')
-            str[i]+=('a'-'A');
-    }
+    transform(str.begin(),str.end(),str.begin(),::tolower);//变成小写
     int max_len =0,count=0;
     for(int i=0;i<str.length();++i){
         for(int j =str.length()-1;j>=i&&j-i>=max_len;j--){
